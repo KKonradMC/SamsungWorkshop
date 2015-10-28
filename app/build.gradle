@@ -18,15 +18,23 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
+    lintOptions {
+        abortOnError false
+    }
 }
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     testCompile 'junit:junit:4.12'
+
+    apt 'com.google.dagger:dagger-compiler:2.0.1'
+
+    provided 'javax.annotation:jsr250-api:1.0'
+    provided 'javax.inject:javax.inject:1'
     compile 'com.android.support:appcompat-v7:23.0.1'
     compile 'com.jakewharton:butterknife:7.0.1'
-    compile 'com.android.support:recyclerview-v7:23.0.0'
+    compile 'com.android.support:recyclerview-v7:23.0.1'
     compile 'com.google.dagger:dagger:2.0.1'
-
-    apt 'com.squareup:dagger-compiler:0.9.1'
+    compile 'com.android.support:design:23.0.1'
 }

@@ -15,5 +15,6 @@
     <string name="month">month</string>
     <string name="week">week</string>
     <string name="day">day</string>
+    <string name="title_activity_main2">Main2Activity</string>
 
 </resources>

@@ -1,41 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                android:orientation="vertical"
-                android:padding="5dp"
-                android:background="?selectableItemBackground"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="5dp">
 
     <ImageView
-            android:id="@+id/user_item_photo"
-            android:layout_centerVertical="true"
-            android:layout_width="70dp"
-            android:layout_height="70dp"/>
+        android:id="@+id/user_item_photo"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_centerVertical="true" />
 
     <TextView
-            android:id="@+id/user_item_name"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:layout_toEndOf="@id/user_item_photo"
-            android:layout_toRightOf="@id/user_item_photo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+        android:id="@+id/user_item_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_toEndOf="@id/user_item_photo"
+        android:layout_toRightOf="@id/user_item_photo"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <TextView
-            android:id="@+id/user_item_reputation"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:layout_below="@id/user_item_name"
-            android:layout_toEndOf="@id/user_item_photo"
-            android:layout_toRightOf="@id/user_item_photo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+        android:id="@+id/user_item_reputation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/user_item_name"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_toEndOf="@id/user_item_photo"
+        android:layout_toRightOf="@id/user_item_photo" />
 
-    <com.polidea.konradkrakowiak.user.ui.BadgeView
-            android:id="@+id/user_item_badges"
-            android:layout_alignParentRight="true"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"/>
+    <com.konradkrakowiak.samsungworkshop.ui.BadgeView
+        android:id="@+id/user_item_badges"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:orientation="vertical" />
 </RelativeLayout>
