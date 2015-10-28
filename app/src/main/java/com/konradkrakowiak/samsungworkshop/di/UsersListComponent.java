@@ -9,7 +9,7 @@ import dagger.Component;
 /**
  * Created by przemyslawlukasz on 28/10/15.
  */
-@Component(modules = {UiModule.class, UtilModule.class})
+@Component(modules = {UiModule.class, UtilModule.class, RetrofitModule.class})
 public interface UsersListComponent {
 
     void inject(Main2Activity mainActivity);

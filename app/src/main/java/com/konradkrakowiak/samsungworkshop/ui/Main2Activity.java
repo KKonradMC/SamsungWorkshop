@@ -17,6 +17,7 @@ import javax.inject.Inject;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
+import retrofit.Retrofit;
 
 /**
  * Created by przemyslawlukasz on 28/10/15.
@@ -33,6 +34,8 @@ public class Main2Activity extends AppCompatActivity {
     RecyclerView.LayoutManager linearLayoutManager;
     @Inject
     UsersListAdapter adapter;
+    @Inject
+    Retrofit retrofit;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
