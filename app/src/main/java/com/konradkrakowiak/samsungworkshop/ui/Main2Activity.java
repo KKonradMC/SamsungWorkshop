@@ -32,7 +32,6 @@ import retrofit.Retrofit;
  */
 public class Main2Activity extends AppCompatActivity {
 
-    private static final String USER_LIST = "USER_LIST";
     @Bind(R.id.toolbar)
     Toolbar toolbar;
     @Bind(R.id.user_list)
@@ -78,13 +77,12 @@ public class Main2Activity extends AppCompatActivity {
     @Override
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
-        outState.putParcelable(USER_LIST, Parcels.wrap(adapter.getUserList()));
+        adapter.saveState(outState);
     }
 
     @Override
     protected void onRestoreInstanceState(Bundle savedInstanceState) {
         super.onRestoreInstanceState(savedInstanceState);
-        List<User> userList = (List<User>) Parcels.unwrap(savedInstanceState.getParcelable(USER_LIST));
-        adapter.setUserList(userList);
+        adapter.onRestoreInstanceState(savedInstanceState);
     }
 }

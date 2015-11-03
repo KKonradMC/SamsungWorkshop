@@ -3,6 +3,7 @@ package com.konradkrakowiak.samsungworkshop.di;
 import com.konradkrakowiak.samsungworkshop.di.qualifier.ArrayListQualifier;
 import com.konradkrakowiak.samsungworkshop.di.qualifier.LinkedListQualifier;
 import com.konradkrakowiak.samsungworkshop.model.User;
+import com.konradkrakowiak.samsungworkshop.utils.ParcelProvider;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -27,6 +28,11 @@ public class UtilModule {
     @Provides
     public List<User> provideArrayUsersList() {
         return new ArrayList<User>();
+    }
+
+    @Provides
+    public ParcelProvider provideParcelProvider() {
+        return new ParcelProvider();
     }
 
 }
