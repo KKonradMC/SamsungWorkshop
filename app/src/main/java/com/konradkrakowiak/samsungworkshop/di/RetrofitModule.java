@@ -46,7 +46,7 @@ public class RetrofitModule {
     }
 
     @Provides
-    BaseUrl provideBaseUrl() {
-        return new StackUrl();
+    BaseUrl provideBaseUrl(HttpUrl httpUrl) {
+        return new StackUrl(httpUrl);
     }
 }

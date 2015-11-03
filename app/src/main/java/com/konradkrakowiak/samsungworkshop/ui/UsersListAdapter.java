@@ -5,6 +5,7 @@ import android.view.ViewGroup;
 
 import com.konradkrakowiak.samsungworkshop.di.qualifier.ArrayListQualifier;
 import com.konradkrakowiak.samsungworkshop.model.User;
+import com.konradkrakowiak.samsungworkshop.model.UserList;
 
 import java.util.List;
 
@@ -39,5 +40,11 @@ public class UsersListAdapter extends RecyclerView.Adapter<UsersListViewHolder> 
     @Override
     public int getItemCount() {
         return userList.size();
+    }
+
+    public void addUsers(UserList users) {
+        for (User user : users) {
+            userList.add(user);
+        }
     }
 }

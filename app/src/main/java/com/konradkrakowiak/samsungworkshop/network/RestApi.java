@@ -23,6 +23,6 @@ public interface RestApi {
         String MAX = "max";
         String SORT = "sort";
         String INNAME = "inname";
-        String SIZE = "size";
+        String SITE = "site";
     }
 }

@@ -6,6 +6,7 @@ import com.konradkrakowiak.samsungworkshop.model.UserList;
 
 import java.util.Date;
 
+import retrofit.Call;
 import retrofit.http.GET;
 import retrofit.http.Query;
 
@@ -14,14 +15,15 @@ import retrofit.http.Query;
  */
 public interface UsersListClient {
 
-    @GET
-    UserList getUsersList(@Query(RestApi.Query.PAGE) int page,
-                          @Query(RestApi.Query.FROMDATE) Date fromdate,
-                          @Query(RestApi.Query.TODATE) Date todate,
-                          @Query(RestApi.Query.ORDER) Order order,
-                          @Query(RestApi.Query.MIN) int min,
-                          @Query(RestApi.Query.MAX) int max,
-                          @Query(RestApi.Query.SORT) Sort sort,
-                          @Query(RestApi.Query.INNAME) String inname,
-                          @Query(RestApi.Query.SIZE) int size);
+    @GET(RestApi.EndPoint.USER_API_CLIENT)
+    Call<UserList> getUsersList(@Query(RestApi.Query.PAGE) Integer page,
+                                @Query(RestApi.Query.PAGESIZE) Integer pagesize,
+                                @Query(RestApi.Query.FROMDATE) Date fromdate,
+                                @Query(RestApi.Query.TODATE) Date todate,
+                                @Query(RestApi.Query.ORDER) Order order,
+                                @Query(RestApi.Query.MIN) Integer min,
+                                @Query(RestApi.Query.MAX) Integer max,
+                                @Query(RestApi.Query.SORT) Sort sort,
+                                @Query(RestApi.Query.INNAME) String inname,
+                                @Query(RestApi.Query.SITE) String site);
 }

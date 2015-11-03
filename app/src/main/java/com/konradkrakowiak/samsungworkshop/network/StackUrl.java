@@ -11,8 +11,11 @@ import retrofit.BaseUrl;
  */
 public class StackUrl implements BaseUrl {
 
-    @Inject
     HttpUrl baseUrl;
+
+    public StackUrl(HttpUrl baseUrl) {
+        this.baseUrl = baseUrl;
+    }
 
     @Override
     public HttpUrl url() {
