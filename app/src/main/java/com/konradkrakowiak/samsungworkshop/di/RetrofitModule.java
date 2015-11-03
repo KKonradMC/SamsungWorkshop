@@ -10,6 +10,7 @@ import retrofit.BaseUrl;
 import retrofit.Converter;
 import retrofit.GsonConverterFactory;
 import retrofit.Retrofit;
+import retrofit.RxJavaCallAdapterFactory;
 
 /**
  * Created by przemyslawlukasz on 28/10/15.
@@ -22,6 +23,7 @@ public class RetrofitModule {
         return builder
                 .baseUrl(baseUrl)
                 .addConverterFactory(converterFactory)
+                .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
                 .build();
     }
 
