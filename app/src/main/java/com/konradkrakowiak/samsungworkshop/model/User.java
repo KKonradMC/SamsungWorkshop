@@ -3,6 +3,8 @@ package com.konradkrakowiak.samsungworkshop.model;
 
 import com.google.gson.annotations.SerializedName;
 
+import org.parceler.Parcel;
+
 /**
  * POJO for json like:
  * <br />
@@ -32,7 +34,7 @@ import com.google.gson.annotations.SerializedName;
  * "profile_image": "https://www.gravatar.com/avatar/6d8ebb117e8d83d74ea95fbdd0f87e13?s=128&d=identicon&r=PG"  <br />
  * }
  */
-
+@Parcel
 public class User {
 
     BadgeCounts badgeCounts;

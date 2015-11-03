@@ -6,7 +6,6 @@ import android.view.ViewGroup;
 import com.konradkrakowiak.samsungworkshop.di.qualifier.ArrayListQualifier;
 import com.konradkrakowiak.samsungworkshop.model.User;
 import com.konradkrakowiak.samsungworkshop.model.UserList;
-import com.nostra13.universalimageloader.core.ImageLoader;
 
 import java.util.List;
 
@@ -26,6 +25,14 @@ public class UsersListAdapter extends RecyclerView.Adapter<UsersListViewHolder> 
 
     @Inject
     UsersListAdapter() {
+    }
+
+    public List<User> getUserList() {
+        return userList;
+    }
+
+    public void setUserList(List<User> userList) {
+        this.userList.addAll(userList);
     }
 
     @Override

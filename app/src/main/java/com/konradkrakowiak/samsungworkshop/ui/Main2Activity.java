@@ -15,7 +15,8 @@ import com.konradkrakowiak.samsungworkshop.model.User;
 import com.konradkrakowiak.samsungworkshop.model.UserList;
 import com.konradkrakowiak.samsungworkshop.network.UsersListClient;
 
-import java.util.ArrayList;
+import org.parceler.Parcels;
+
 import java.util.List;
 
 import javax.inject.Inject;
@@ -31,6 +32,7 @@ import retrofit.Retrofit;
  */
 public class Main2Activity extends AppCompatActivity {
 
+    private static final String USER_LIST = "USER_LIST";
     @Bind(R.id.toolbar)
     Toolbar toolbar;
     @Bind(R.id.user_list)
@@ -57,7 +59,8 @@ public class Main2Activity extends AppCompatActivity {
                     @Override
                     public void onResponse(Response<UserList> response, Retrofit retrofit) {
                         adapter.addUsers(response.body());
-                        adapter.notifyDataSetChanged();;
+                        adapter.notifyDataSetChanged();
+                        ;
                     }
 
                     @Override
@@ -70,5 +73,18 @@ public class Main2Activity extends AppCompatActivity {
     void prepareUsersList() {
         userList.setLayoutManager(linearLayoutManager);
         userList.setAdapter(adapter);
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putParcelable(USER_LIST, Parcels.wrap(adapter.getUserList()));
+    }
+
+    @Override
+    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+        List<User> userList = (List<User>) Parcels.unwrap(savedInstanceState.getParcelable(USER_LIST));
+        adapter.setUserList(userList);
     }
 }
