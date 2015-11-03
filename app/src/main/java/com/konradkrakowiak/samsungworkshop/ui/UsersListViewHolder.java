@@ -8,6 +8,7 @@ import android.widget.TextView;
 import com.konradkrakowiak.samsungworkshop.R;
 import com.konradkrakowiak.samsungworkshop.di.qualifier.UsersListViewHolderQualifier;
 import com.konradkrakowiak.samsungworkshop.model.User;
+import com.nostra13.universalimageloader.core.ImageLoader;
 
 import javax.inject.Inject;
 
@@ -26,6 +27,8 @@ public class UsersListViewHolder extends RecyclerView.ViewHolder {
     TextView userItemReputation;
     @Bind(R.id.user_item_badges)
     BadgeView userItemBadges;
+    @Inject
+    ImageLoader imageLoader;
 
     @Inject
     public UsersListViewHolder(@UsersListViewHolderQualifier View itemView) {
@@ -34,6 +37,7 @@ public class UsersListViewHolder extends RecyclerView.ViewHolder {
     }
 
     void bind(User user) {
-        userItemName.setText(user.toString());
+        userItemName.setText(user.getDisplayName());
+        imageLoader.displayImage(user.getProfileImage(), userItemPhoto);
     }
 }

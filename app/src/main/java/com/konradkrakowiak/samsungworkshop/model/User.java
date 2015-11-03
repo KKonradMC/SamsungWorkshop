@@ -54,8 +54,19 @@ public class User {
     String location;
     String websiteUrl;
     String link;
+
+    public String getDisplayName() {
+        return displayName;
+    }
+
     @SerializedName(Metadata.DISPLAY_NAME)
     String displayName;
+
+    public String getProfileImage() {
+        return profileImage;
+    }
+
+    @SerializedName(Metadata.PROFILE_IMAGE)
     String profileImage;
 
     interface Metadata {

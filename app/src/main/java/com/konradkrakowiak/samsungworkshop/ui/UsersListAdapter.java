@@ -6,6 +6,7 @@ import android.view.ViewGroup;
 import com.konradkrakowiak.samsungworkshop.di.qualifier.ArrayListQualifier;
 import com.konradkrakowiak.samsungworkshop.model.User;
 import com.konradkrakowiak.samsungworkshop.model.UserList;
+import com.nostra13.universalimageloader.core.ImageLoader;
 
 import java.util.List;
 

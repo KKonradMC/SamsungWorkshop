@@ -40,4 +40,6 @@ dependencies {
     compile 'com.squareup.retrofit:retrofit:2.0.0-beta2'
     compile 'com.squareup.retrofit:converter-gson:2.0.0-beta2'
     compile 'org.immutables:gson:2.1.0'
+    compile 'com.nostra13.universalimageloader:universal-image-loader:1.9.4'
+
 }
