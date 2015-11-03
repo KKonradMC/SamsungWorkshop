@@ -21,6 +21,7 @@ import butterknife.ButterKnife;
 import retrofit.Callback;
 import retrofit.Response;
 import retrofit.Retrofit;
+import rx.Subscription;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.functions.Action0;
 import rx.functions.Action1;
@@ -43,6 +44,7 @@ public class Main2Activity extends AppCompatActivity {
     UsersListAdapter adapter;
     @Inject
     Retrofit retrofit;
+    private Subscription stackoverflow;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -73,7 +75,7 @@ public class Main2Activity extends AppCompatActivity {
     }
 
     private void executeRetrofitRx() {
-        retrofit.create(UsersListClient.class)
+        stackoverflow = retrofit.create(UsersListClient.class)
                 .getUsersListRx(null, null,
                         null, null,
                         Order.desc, null,
@@ -119,5 +121,13 @@ public class Main2Activity extends AppCompatActivity {
     protected void onRestoreInstanceState(Bundle savedInstanceState) {
         super.onRestoreInstanceState(savedInstanceState);
         adapter.onRestoreInstanceState(savedInstanceState);
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        if(stackoverflow != null) {
+            stackoverflow.unsubscribe();
+        }
     }
 }
