@@ -1,5 +1,7 @@
 package com.konradkrakowiak.samsungworkshop.model;
 
+import org.parceler.Parcel;
+
 /**
  * POJO for json                  <br />
  *                                <br />
@@ -10,6 +12,8 @@ package com.konradkrakowiak.samsungworkshop.model;
  *  }                             <br />
  *
  */
+
+@Parcel
 public class BadgeCounts {
 
     int bronze;

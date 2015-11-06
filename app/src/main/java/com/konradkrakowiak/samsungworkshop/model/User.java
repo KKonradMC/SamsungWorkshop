@@ -1,6 +1,10 @@
 package com.konradkrakowiak.samsungworkshop.model;
 
 
+import com.google.gson.annotations.SerializedName;
+
+import org.parceler.Parcel;
+
 /**POJO for json like:
  *                                                                                                                   <br />
  *   {                                                                                                               <br />
@@ -30,6 +34,7 @@ package com.konradkrakowiak.samsungworkshop.model;
  *   }
  */
 
+@Parcel
 public class User {
 
     interface Metadata {
@@ -59,46 +64,234 @@ public class User {
 
     }
 
+    @SerializedName(Metadata.BADGE_COUNTS)
     BadgeCounts badgeCounts;
 
+    @SerializedName(Metadata.ACCOUNT_ID)
     long accountId;
 
+    @SerializedName(Metadata.IS_EMPLOYEE)
     boolean isEmployee;
 
+    @SerializedName(Metadata.LAST_MODIFIED_DATE)
     long lastModifiedDate;
 
+    @SerializedName(Metadata.LAST_ACCESS_DATE)
     long lastAccessDate;
 
+    @SerializedName(Metadata.REPUTATION_CHANGE_YEAR)
     int reputationChangeYear;
 
+    @SerializedName(Metadata.REPUTATION_CHANGE_QUARTER)
     int reputationChangeQuarter;
 
+    @SerializedName(Metadata.REPUTATION_CHANGE_MONTH)
     int reputationChangeMonth;
 
+    @SerializedName(Metadata.REPUTATION_CHANGE_WEEK)
     int reputationChangeWeek;
 
+    @SerializedName(Metadata.REPUTATION_CHANGE_DAY)
     int reputationChangeDay;
 
+    @SerializedName(Metadata.REPUTATION)
     int reputation;
 
+    @SerializedName(Metadata.CREATION_DATE)
     long creationDate;
 
+    @SerializedName(Metadata.USER_TYPE)
     UserType userType;
 
+    @SerializedName(Metadata.USER_ID)
     long userId;
 
+    @SerializedName(Metadata.AGE)
     int age;
 
+    @SerializedName(Metadata.ACCEPT_RATE)
     int acceptRate;
 
+    @SerializedName(Metadata.LOCATION)
     String location;
 
+    @SerializedName(Metadata.WEBSITE_URL)
     String websiteUrl;
 
+    @SerializedName(Metadata.LINK)
     String link;
 
+    @SerializedName(Metadata.DISPLAY_NAME)
     String displayName;
 
+    @SerializedName(Metadata.PROFILE_IMAGE)
     String profileImage;
 
+    public String getDisplayName(){
+        return displayName;
+    }
+
+    public BadgeCounts getBadgeCounts() {
+        return badgeCounts;
+    }
+
+    public void setBadgeCounts(BadgeCounts badgeCounts) {
+        this.badgeCounts = badgeCounts;
+    }
+
+    public long getAccountId() {
+        return accountId;
+    }
+
+    public void setAccountId(long accountId) {
+        this.accountId = accountId;
+    }
+
+    public boolean isEmployee() {
+        return isEmployee;
+    }
+
+    public void setIsEmployee(boolean isEmployee) {
+        this.isEmployee = isEmployee;
+    }
+
+    public long getLastModifiedDate() {
+        return lastModifiedDate;
+    }
+
+    public void setLastModifiedDate(long lastModifiedDate) {
+        this.lastModifiedDate = lastModifiedDate;
+    }
+
+    public long getLastAccessDate() {
+        return lastAccessDate;
+    }
+
+    public void setLastAccessDate(long lastAccessDate) {
+        this.lastAccessDate = lastAccessDate;
+    }
+
+    public int getReputationChangeYear() {
+        return reputationChangeYear;
+    }
+
+    public void setReputationChangeYear(int reputationChangeYear) {
+        this.reputationChangeYear = reputationChangeYear;
+    }
+
+    public int getReputationChangeQuarter() {
+        return reputationChangeQuarter;
+    }
+
+    public void setReputationChangeQuarter(int reputationChangeQuarter) {
+        this.reputationChangeQuarter = reputationChangeQuarter;
+    }
+
+    public int getReputationChangeMonth() {
+        return reputationChangeMonth;
+    }
+
+    public void setReputationChangeMonth(int reputationChangeMonth) {
+        this.reputationChangeMonth = reputationChangeMonth;
+    }
+
+    public int getReputationChangeWeek() {
+        return reputationChangeWeek;
+    }
+
+    public void setReputationChangeWeek(int reputationChangeWeek) {
+        this.reputationChangeWeek = reputationChangeWeek;
+    }
+
+    public int getReputationChangeDay() {
+        return reputationChangeDay;
+    }
+
+    public void setReputationChangeDay(int reputationChangeDay) {
+        this.reputationChangeDay = reputationChangeDay;
+    }
+
+    public int getReputation() {
+        return reputation;
+    }
+
+    public void setReputation(int reputation) {
+        this.reputation = reputation;
+    }
+
+    public long getCreationDate() {
+        return creationDate;
+    }
+
+    public void setCreationDate(long creationDate) {
+        this.creationDate = creationDate;
+    }
+
+    public UserType getUserType() {
+        return userType;
+    }
+
+    public void setUserType(UserType userType) {
+        this.userType = userType;
+    }
+
+    public long getUserId() {
+        return userId;
+    }
+
+    public void setUserId(long userId) {
+        this.userId = userId;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public int getAcceptRate() {
+        return acceptRate;
+    }
+
+    public void setAcceptRate(int acceptRate) {
+        this.acceptRate = acceptRate;
+    }
+
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
+    }
+
+    public String getWebsiteUrl() {
+        return websiteUrl;
+    }
+
+    public void setWebsiteUrl(String websiteUrl) {
+        this.websiteUrl = websiteUrl;
+    }
+
+    public String getLink() {
+        return link;
+    }
+
+    public void setLink(String link) {
+        this.link = link;
+    }
+
+    public void setDisplayName(String displayName) {
+        this.displayName = displayName;
+    }
+
+    public String getProfileImage() {
+        return profileImage;
+    }
+
+    public void setProfileImage(String profileImage) {
+        this.profileImage = profileImage;
+    }
 }

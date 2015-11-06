@@ -1,5 +1,7 @@
 package com.konradkrakowiak.samsungworkshop.model;
 
+import com.google.gson.annotations.SerializedName;
+
 import java.util.Iterator;
 import java.util.List;
 
@@ -11,6 +13,7 @@ public class UserList implements Iterable<User> {
         String ITEMS = "items";
     }
 
+    @SerializedName(Metadata.ITEMS)
     List<User> userList;
 
     @Override
